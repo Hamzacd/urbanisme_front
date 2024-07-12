@@ -1,0 +1,44 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <!-- content-header component -->
+    <app-content-header [contentHeader]="contentHeader"></app-content-header>
+
+    <!-- card statistiques start -->
+    <app-card-statistique></app-card-statistique>
+    <!-- card statistiques end -->
+  
+    <div class="row">
+      <!-- Revenue Card -->
+      <div class="col-12 w-100">
+        <app-data-table   title="unapproved Requests" [allDataTable]="this.unapproved"></app-data-table>
+          <!-- loading Card -->
+          <!-- <div class="card h-100 shadow-none" >
+            <div class="card-body d-flex justify-content-center align-items-center ">
+                <app-loading-card></app-loading-card>
+            </div>
+        </div> -->
+        <!-- / loading Card -->
+      </div>
+
+    
+  
+    </div>
+        <div class="row">
+      <!-- Revenue Card -->
+      <div class="col-12 w-100">
+        <app-data-table   title="Approved Requests" [allDataTable]="this.approved"></app-data-table>
+          <!-- loading Card -->
+          <!-- <div class="card h-100 shadow-none" >
+            <div class="card-body d-flex justify-content-center align-items-center ">
+                <app-loading-card></app-loading-card>
+            </div>
+        </div> -->
+        <!-- / loading Card -->
+      </div>
+
+    
+  
+    </div>
+   
+  </div>
+</div>
