@@ -92,10 +92,11 @@ export class AuthenticationService {
    * @param password
    * @returns user
    */
-  register(username: string, email: string, password: string) {
+  register(username: string, email: string, cin: string, password: string) {
     let postData = {
       name: username,
       email: email,
+      cin: cin,
       password: password,
       role: 'manager'
     }

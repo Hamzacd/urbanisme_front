@@ -115,7 +115,7 @@
                 </span>
               </div>
             </div> -->
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <div class="form-group">
               <label for="cin">Numéro CIN (Obligatoire)</label>
               <input type="text" [(ngModel)]="this.user.cin" class="form-control" id="cin" name="cin"
@@ -124,7 +124,7 @@
             <span *ngIf="!user_form.controls.cin.valid && submit_attempt" class="invalid-form">
               <small class="form-text text-danger">This field is required!</small>
             </span>
-          </div>
+          </div> -->
           <!-- <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label for="role">Role</label>
@@ -153,11 +153,11 @@
         <span *ngIf="!user_form.controls.proprietyFile.valid && submit_attempt" class="invalid-form">
           <small class="form-text text-danger">This field is required!</small>
         </span>
-        <a href="javascript:void(0);" class="mr-25">
+        <!-- <a href="javascript:void(0);" class="mr-25">
           <img
             [src]="this.previewPropriety ? this.previewPropriety : this.user.avatare ? USER_IMAGE_PATH + this.user.avatare : 'assets/images/default_images/default-placeholder.png'"
             class="rounded mr-50 mt-2 mx-auto d-block" alt="profile image" height="76" width="80" />
-        </a>
+        </a> -->
       </div>
       <!-- <div class="mb-3">
           <label for="formFileMultiple" class="form-label">Multiple files input example</label>
@@ -170,11 +170,11 @@
         <span *ngIf="!user_form.controls.architectFile.valid && submit_attempt" class="invalid-form">
           <small class="form-text text-danger">This field is required!</small>
         </span>
-        <a href="javascript:void(0);" class="mr-25">
+        <!-- <a href="javascript:void(0);" class="mr-25">
           <img
             [src]="this.previewArchiticture ? this.previewArchiticture : this.user.avatare ? USER_IMAGE_PATH + this.user.avatare : 'assets/images/default_images/default-placeholder.png'"
             class="rounded mr-50 mt-2 mx-auto d-block" alt="profile image" height="76" width="80" />
-        </a>
+        </a> -->
       </div>
 
       <div class="mb-2">
@@ -184,11 +184,11 @@
         <span *ngIf="!user_form.controls.topographiqueFile.valid && submit_attempt" class="invalid-form">
           <small class="form-text text-danger">This field is required!</small>
         </span>
-        <a href="javascript:void(0);" class="mr-25">
+        <!-- <a href="javascript:void(0);" class="mr-25">
           <img
             [src]="this.previewTopographique ? this.previewTopographique : this.user.avatare ? USER_IMAGE_PATH + this.user.avatare : 'assets/images/default_images/default-placeholder.png'"
             class="rounded mr-50 mt-2 mx-auto d-block" alt="profile image" height="76" width="80" />
-        </a>
+        </a> -->
       </div>
       <div class="mb-2">
         <label for="formFileLg" class="form-label">Upload de la procuration (Obligatoire)</label>
@@ -197,17 +197,17 @@
         <span *ngIf="!user_form.controls.procurationFile.valid && submit_attempt" class="invalid-form">
           <small class="form-text text-danger">This field is required!</small>
         </span>
-        <a href="javascript:void(0);" class="mr-25">
+        <!-- <a href="javascript:void(0);" class="mr-25">
           <img
             [src]="this.previewProcuration ? this.previewProcuration : this.user.avatare ? USER_IMAGE_PATH + this.user.avatare : 'assets/images/default_images/default-placeholder.png'"
             class="rounded mr-50 mt-2 mx-auto d-block" alt="profile image" height="76" width="80" />
-        </a>
+        </a> -->
       </div>
     </div>
           <div class="mb-3">
             <button type="submit" class="btn btn-primary mr-1" rippleEffect [disabled]="uploading">Save changes</button>
             <button type="reset" class="btn btn-outline-secondary " rippleEffect [disabled]="uploading"
-              routerLink="/users/list">Cancel</button>
+              routerLink="/urb_requests/list/{{ title }}">Cancel</button>
           </div>
           <!-- </div> -->
         </form>

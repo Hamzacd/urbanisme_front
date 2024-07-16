@@ -109,17 +109,6 @@ export class OneComponent implements OnInit {
           this.users = await res.data;
           this.tempData = await res.data;
           this.content_loaded = true;
-
-          // Remove User connected from array users in table
-          let id_user_connected = null;
-          for (let index = 0; index < this.users.length; index++) {
-            if (this.users[index].id === this.currentUser.id) {
-              id_user_connected = index;
-            }
-          }
-          this.users.splice(id_user_connected, 1);
-
-          // console.log("users : ",this.users)
         }
       },
         async (error: any) => {
@@ -182,12 +171,12 @@ export class OneComponent implements OnInit {
 
     Swal.fire({
       title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      text: "You won't be able to Cancel this!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#7367F0',
       cancelButtonColor: '#E42728',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Yes, cancel it!',
       customClass: {
         confirmButton: 'btn btn-primary',
         cancelButton: 'btn btn-danger ml-1'
@@ -197,11 +186,11 @@ export class OneComponent implements OnInit {
 
         // code
         const data = { id: id };
-        that.dataService.delete('users', data).subscribe(async (res: any) => {
+        that.dataService.delete('urb_requests', data).subscribe(async (res: any) => {
           if (res.success) {
             that.content_loaded = false;
             await that.getAllUsers();
-            that.dataService.toastrInfo("User has been deleted")
+            that.dataService.toastrInfo(res.message)
             that.table.offset = 0;
           }
         }, async (error: any) => {

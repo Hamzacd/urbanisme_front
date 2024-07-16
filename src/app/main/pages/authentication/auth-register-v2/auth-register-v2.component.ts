@@ -95,7 +95,7 @@ export class AuthRegisterV2Component implements OnInit {
 
     this.loading = true
     this._authenticationService
-      .register(this.f.username.value, this.f.email.value, this.f.password.value)
+      .register(this.f.username.value, this.f.email.value,this.f.cin.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         data => {
@@ -118,6 +118,7 @@ export class AuthRegisterV2Component implements OnInit {
     this.registerForm = this._formBuilder.group({
       username: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
+      cin: ['', [Validators.required]],
       password: ['', Validators.required]
     });
 

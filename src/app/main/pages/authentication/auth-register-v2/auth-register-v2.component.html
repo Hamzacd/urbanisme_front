@@ -26,13 +26,14 @@
           <h2 class="card-title font-weight-bold mb-1">Adventure starts here 🚀</h2>
           <p class="card-text mb-2">Make your app management easy and fun!</p>
           <form class="auth-register-form mt-2" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
             <div class="form-group">
               <label for="register-username" class="form-label">Username</label>
               <input
                 type="text"
                 formControlName="username"
                 class="form-control"
-                placeholder="johndoe"
+                placeholder="Badaouy"
                 aria-describedby="register-username"
                 tabindex="1"
                 autofocus
@@ -42,6 +43,24 @@
                 <div *ngIf="f.username.errors.required">Username is required</div>
               </div>
             </div>
+
+            <div class="form-group">
+              <label for="register-cin" class="form-label">Cin</label>
+              <input
+                type="text"
+                formControlName="cin"
+                class="form-control"
+                placeholder="PA159454"
+                aria-describedby="register-cin"
+                tabindex="1"
+                autofocus
+                [ngClass]="{ 'is-invalid': submitted && f.cin.errors }"
+              />
+              <div *ngIf="submitted && f.cin.errors" class="invalid-feedback">
+                <div *ngIf="f.cin.errors.required">Cin is required</div>
+              </div>
+            </div>
+
             <div class="form-group">
               <label for="register-email" class="form-label">Email</label>
               <input

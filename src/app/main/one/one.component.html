@@ -149,7 +149,7 @@
                         <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex"
                             let-row="row">
                             <div class="d-flex align-items-center">
-                                <!-- <div ngbDropdown container="body">
+                                <div ngbDropdown container="body">
                                     <a ngbDropdownToggle href="javascript:void(0);" class="hide-arrow"
                                         id="dropdownBrowserState" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
@@ -159,9 +159,9 @@
                                         aria-labelledby="dropdownBrowserState">
                                         <a ngbDropdownItem (click)="deleteItem(row.id)"
                                             class="d-flex align-items-center"><i data-feather="trash-2"
-                                                class="mr-50"></i> Delete</a>
+                                                class="mr-50"></i> Annuler une demande</a>
                                     </div>
-                                </div> -->
+                                </div>
                                 <!-- {{ this.userRole }} -->
                                 <a routerLink="/urb_requests/edit/{{row.id}}/{{ this.title }}">
                                     <i data-feather="edit" class="text-primary cursor-pointer"></i>
