@@ -96,14 +96,14 @@
 
             <div class="mb-2">
               <label for="formFile" class="form-label">Upload d’un certificat de propriété (Obligatoire)</label>
-              <input class="form-control" type="file" name="proprietyFile" formControlName="proprietyFile"
+              <input class="form-control" type="file" name="propriety_file" formControlName="propriety_file"
                 (change)="proprietyFile($event)" id="formFile">
-              <span *ngIf="!user_form.controls.proprietyFile.valid && submit_attempt" class="invalid-form">
+              <span *ngIf="!user_form.controls.propriety_file.valid && submit_attempt" class="invalid-form">
                 <small class="form-text text-danger">This field is required!</small>
               </span>
               
-              <a class="mr-25" [href]="USER_IMAGE_PATH + this.user.proprietyFile" [download]="value">
-                {{ this.user.proprietyFile | truncate:40 }}
+              <a class="mr-25" [href]="USER_IMAGE_PATH + this.user.propriety_file" [download]="value">
+                {{ this.user.propriety_file | truncate:40 }}
                 <img class="rounded mr-50 mt-2 mx-auto d-block" src="assets/images/pngwing.com.png" alt="user_image"
                 height="76" width="80" style="cursor: pointer;" />
               </a>
@@ -120,13 +120,13 @@
               </div> -->
             <div class="mb-2">
               <label for="formFileDisabled" class="form-label">Upload Plan d’architecture (Obligatoire)</label>
-              <input class="form-control" type="file" name="architectFile" formControlName="architectFile"
+              <input class="form-control" type="file" name="architect_file" formControlName="architect_file"
                 (change)="architictureFile($event)" id="formFileDisabled">
-              <span *ngIf="!user_form.controls.architectFile.valid && submit_attempt" class="invalid-form">
+              <span *ngIf="!user_form.controls.architect_file.valid && submit_attempt" class="invalid-form">
                 <small class="form-text text-danger">This field is required!</small>
               </span>
-              <a class="mr-25" [href]="USER_IMAGE_PATH + this.user.architectFile" [download]="value">
-                {{ this.user.architectFile | truncate:40 }}
+              <a class="mr-25" [href]="USER_IMAGE_PATH + this.user.architect_file" [download]="value">
+                {{ this.user.architect_file | truncate:40 }}
                 <img class="rounded mr-50 mt-2 mx-auto d-block" src="assets/images/pngwing.com.png" alt="user_image"
                 height="76" width="80" style="cursor: pointer;" />
               </a>
@@ -139,26 +139,26 @@
   
             <div class="mb-2">
               <label for="formFileSm" class="form-label">Upload Levé topographique de la parcelle (Obligatoire)</label>
-              <input class="form-control" id="formFileSm" type="file" name="topographiqueFile"
-                formControlName="topographiqueFile" (change)="topographiqueFile($event)">
-              <span *ngIf="!user_form.controls.topographiqueFile.valid && submit_attempt" class="invalid-form">
+              <input class="form-control" id="formFileSm" type="file" name="topographique_file"
+                formControlName="topographique_file" (change)="topographiqueFile($event)">
+              <span *ngIf="!user_form.controls.topographique_file.valid && submit_attempt" class="invalid-form">
                 <small class="form-text text-danger">This field is required!</small>
               </span>
-              <a class="mr-25" [href]="USER_IMAGE_PATH + this.user.topographiqueFile" [download]="value">
-                {{ this.user.topographiqueFile | truncate:40 }}
+              <a class="mr-25" [href]="USER_IMAGE_PATH + this.user.topographique_file" [download]="value">
+                {{ this.user.topographique_file | truncate:40 }}
                 <img class="rounded mr-50 mt-2 mx-auto d-block" src="assets/images/pngwing.com.png" alt="user_image"
                 height="76" width="80" style="cursor: pointer;" />
               </a>
             </div>
             <div class="mb-2">
               <label for="formFileLg" class="form-label">Upload de la procuration (Obligatoire)</label>
-              <input class="form-control" id="formFileLg" type="file" name="procurationFile" formControlName="procurationFile"
+              <input class="form-control" id="formFileLg" type="file" name="procuration_file" formControlName="procuration_file"
                 (change)="procurationFile($event)">
-              <span *ngIf="!user_form.controls.procurationFile.valid && submit_attempt" class="invalid-form">
+              <span *ngIf="!user_form.controls.procuration_file.valid && submit_attempt" class="invalid-form">
                 <small class="form-text text-danger">This field is required!</small>
               </span>
-              <a class="mr-25" [href]="USER_IMAGE_PATH + this.user.procurationFile" [download]="value">
-                {{ this.user.procurationFile | truncate:40 }}
+              <a class="mr-25" [href]="USER_IMAGE_PATH + this.user.procuration_file" [download]="value">
+                {{ this.user.procuration_file | truncate:40 }}
                 <img class="rounded mr-50 mt-2 mx-auto d-block" src="assets/images/pngwing.com.png" alt="user_image"
                 height="76" width="80" style="cursor: pointer;" />
               </a>

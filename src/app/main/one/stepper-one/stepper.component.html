@@ -1,0 +1,45 @@
+<div class="container">
+    <!-- <hello name="{{ name }}"></hello> -->
+    <div id="stepper1" class="bs-stepper">
+      <div class="bs-stepper-header">
+        <div class="step" data-target="#test-l-1">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">1</span>
+            <span class="bs-stepper-label">Avis de l’agence urbaine</span>
+          </button>
+        </div>
+        <div class="line"></div>
+        <div class="step" data-target="#test-l-2">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">2</span>
+            <span class="bs-stepper-label">Avis de la commune</span>
+          </button>
+        </div>
+        <div class="line"></div>
+        <div class="step" data-target="#test-l-3">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">3</span>
+            <span class="bs-stepper-label">Avis de la province</span>
+          </button>
+        </div>
+      </div>
+      <div class="bs-stepper-content">
+       
+          <div id="test-l-1" style="margin-left:auto !important" class="content">
+            <app-stepper-data-table [allDataTable]="this.one"></app-stepper-data-table>
+            <button (click)="next()" class="btn btn-primary">Next</button>
+          </div>
+          <div id="test-l-2" style="margin-left:auto !important" class="content">
+            <app-stepper-data-table [allDataTable]="this.one"></app-stepper-data-table>
+            <button (click)="next()" class="btn btn-primary">Next</button>
+          </div>
+          <div id="test-l-3" style="margin-left:auto !important" class="content text-center">
+            <app-stepper-data-table [allDataTable]="this.one"></app-stepper-data-table>
+            <!-- <button (click)="next()" class="btn btn-primary">Next</button> -->
+            <button (click)="onSubmit()" class="btn btn-primary mt-5">Approver</button>
+          </div>
+       
+      </div>
+    </div>
+  </div>
+  

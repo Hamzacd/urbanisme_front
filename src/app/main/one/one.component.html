@@ -131,7 +131,7 @@
                         </ng-template>
                     </ngx-datatable-column> -->
 
-                    <ngx-datatable-column *ngIf="this.userRole != 'manager'" [width]="50" name="status" prop="status">
+                    <!-- <ngx-datatable-column *ngIf="this.userRole != 'manager'" [width]="50" name="status" prop="status">
                         <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex"
                             let-row="row">
                             <div class="custom-control custom-switch">
@@ -143,9 +143,9 @@
                                 </label>
                             </div>
                         </ng-template>
-                    </ngx-datatable-column>
+                    </ngx-datatable-column> -->
 
-                    <ngx-datatable-column *ngIf="this.userRole != 'admin'" name="Actions" [width]="60" [sortable]="false">
+                    <ngx-datatable-column  name="Actions" [width]="60" [sortable]="false">
                         <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex"
                             let-row="row">
                             <div class="d-flex align-items-center">
@@ -155,15 +155,22 @@
                                         aria-expanded="false">
                                         <i data-feather="more-vertical" class="text-primary cursor-pointer mr-50"></i>
                                     </a>
-                                    <div ngbDropdownMenu class="dropdown-menu-right"
+                                    <div *ngIf="this.userRole != 'manager'" ngbDropdownMenu class="dropdown-menu-right"
                                         aria-labelledby="dropdownBrowserState">
-                                        <a ngbDropdownItem (click)="deleteItem(row.id)"
-                                            class="d-flex align-items-center"><i data-feather="trash-2"
-                                                class="mr-50"></i> Annuler une demande</a>
+                                        <a ngbDropdownItem (click)="aproveRequest(row.id)"
+                                            class="d-flex align-items-center"><i data-feather="approved-2"
+                                                class="mr-50"></i> Aprover une demande</a>
                                     </div>
+
+                                    <div *ngIf="this.userRole != 'admin'" ngbDropdownMenu class="dropdown-menu-right"
+                                    aria-labelledby="dropdownBrowserState">
+                                    <a ngbDropdownItem (click)="deleteItem(row.id)"
+                                        class="d-flex align-items-center"><i data-feather="trash-2"
+                                            class="mr-50"></i> Annuler une demande</a>
+                                </div>
                                 </div>
                                 <!-- {{ this.userRole }} -->
-                                <a routerLink="/urb_requests/edit/{{row.id}}/{{ this.title }}">
+                                <a *ngIf="this.userRole != 'admin'" routerLink="/urb_requests/edit/{{row.id}}/{{ this.title }}">
                                     <i data-feather="edit" class="text-primary cursor-pointer"></i>
                                 </a>
                             </div>

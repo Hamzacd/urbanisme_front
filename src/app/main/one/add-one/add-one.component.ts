@@ -98,10 +98,10 @@ export class AddOneComponent implements OnInit {
       const formData = {
         cin: this.user_form.get('cin')?.value,
         file_type: this.title,
-        topographiqueFile: this.user.topographiqueFile,
-        proprietyFile: this.user.proprietyFile,
-        architectFile: this.user.architectFile,
-        procurationFile: this.user.procurationFile,
+        topographiqueFile: this.user.topographique_file,
+        proprietyFile: this.user.propriety_file,
+        architectFile: this.user.architect_file,
+        procurationFile: this.user.procuration_file,
         // topographiqueFile: this.getFileAsBase64(this.topographique_File.item(0)),
         // proprietyFile: this.getFileAsBase64(this.propriety_File.item(0)),
         // architectFile: this.getFileAsBase64(this.architicture_File.item(0)),
@@ -257,20 +257,20 @@ export class AddOneComponent implements OnInit {
                   confirmButtonColor: "#6FAAE2",
                 })
                 if (name == 1) {
-                  this.user.architectFile = data.filename;
+                  this.user.architect_file = data.filename;
                 }
                 else if (name == 2) {
-                  this.user.topographiqueFile = data.filename;
+                  this.user.topographique_file = data.filename;
                 }
                 else if (name == 3) {
-                  this.user.proprietyFile = data.filename;
+                  this.user.propriety_file = data.filename;
                 }
                 else if (name == 4) {
-                  this.user.procurationFile = data.filename;
+                  this.user.procuration_file = data.filename;
                 }
                 setTimeout(() => {
                   Swal.close()
-                }, 3000);
+                }, 500);
               } else {
                 Swal.fire({
                   icon: 'error',
@@ -279,7 +279,7 @@ export class AddOneComponent implements OnInit {
                 })
                 setTimeout(() => {
                   Swal.close()
-                }, 3000);
+                }, 500);
               }
 
               this.selectedFiles = undefined;

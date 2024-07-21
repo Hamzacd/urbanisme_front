@@ -93,7 +93,7 @@ export class EditOneComponent implements OnInit {
       },
         async (error: any) => {
           console.log(error)
-          this.dataService.toastrDanger("Error while deleting User, " + error);
+          this.dataService.toastrDanger("Error while editting request, " + error);
         });
     
   }
@@ -104,10 +104,10 @@ export class EditOneComponent implements OnInit {
     this.title = this.route.snapshot.paramMap.get('title');
 
     this.user_form = this.formBuilder.group({
-      architectFile: [''],
-      procurationFile: [''],
-      proprietyFile: [''],
-      topographiqueFile: [''],
+      architect_file: [''],
+      procuration_file: [''],
+      propriety_file: [''],
+      topographique_file: [''],
     });
     // content header
     this.contentHeader = {
@@ -135,7 +135,7 @@ export class EditOneComponent implements OnInit {
       if (res.success) {
         
         data = await res.data;
-        this.user = data;
+        this.user = data[0];
         console.log(this.user);
         // this.user.role = data.role_user.role;
         // this.oldEmail = this.user.email;
@@ -183,16 +183,16 @@ export class EditOneComponent implements OnInit {
                   confirmButtonColor: "#6FAAE2",
                 })
                 if (name == 1) {
-                  this.user.architectFile = data.filename;
+                  this.user.architect_file = data.filename;
                 }
                 else if (name == 2) {
-                  this.user.topographiqueFile = data.filename;
+                  this.user.topographique_file = data.filename;
                 }
                 else if (name == 3) {
-                  this.user.proprietyFile = data.filename;
+                  this.user.propriety_file = data.filename;
                 }
                 else if (name == 4) {
-                  this.user.procurationFile = data.filename;
+                  this.user.procuration_file = data.filename;
                 }
                 setTimeout(() => {
                   Swal.close()

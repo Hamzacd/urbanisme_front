@@ -14,6 +14,8 @@ import { CoreCommonModule } from '@core/common.module';
 import { CoreThemeCustomizerModule } from '@core/components';
 import { ConstractionComponent } from './constraction.component';
 import { TruncatePipe } from '@core/pipes/truncate.pipe';
+import { SteeperComponent } from '../one/stepper-one/stepper.component';
+import { DataTableStepperComponent } from '../one/stepper-one/data-table/data-table.component';
 
 const appRoutes: Routes = [
   {
@@ -30,6 +32,11 @@ const appRoutes: Routes = [
     path: 'add/:title',
     component: AddOneComponent,
     data: { animation: 'home' }
+  },
+  {
+    path: 'stepper/:id/:title',
+    component: SteeperComponent,
+    data: { animation: 'home' }
   }
 ];
 
@@ -39,6 +46,8 @@ const appRoutes: Routes = [
     OneComponent,
     AddOneComponent,
     EditOneComponent,
+    SteeperComponent,
+    DataTableStepperComponent,
     TruncatePipe  
   ],
 
@@ -61,7 +70,8 @@ const appRoutes: Routes = [
   exports: [
     OneComponent,
     AddOneComponent,
-    EditOneComponent
+    EditOneComponent,
+    SteeperComponent
   ]
 })
 export class ConstractionModule { }

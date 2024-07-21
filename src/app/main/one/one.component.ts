@@ -151,7 +151,9 @@ export class OneComponent implements OnInit {
         this.dataService.toastrDanger("Error while taking - Check your info input, " + error);
       });
   }
-
+  aproveRequest(id){
+    this.router.navigate(['urb_requests/stepper/' + id + '/' + this.title]);
+  }
   filterUpdate(event) {
     const val = event.target.value.toLowerCase();
 
