@@ -44,10 +44,10 @@ export class OneComponent implements OnInit {
 
   @ViewChild(DatatableComponent) table: DatatableComponent;
 
-  constructor(private _authenticationService: AuthenticationService ,
-    private router: Router,public exportData: ExportService,
-     private dataService: DataService, private toastr: ToastrService,
-     private http: HttpClient,private route: ActivatedRoute) {
+  constructor(private _authenticationService: AuthenticationService,
+    private router: Router, public exportData: ExportService,
+    private dataService: DataService, private toastr: ToastrService,
+    private http: HttpClient, private route: ActivatedRoute) {
     this.options = this.toastr.toastrConfig;
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const currentUser = this._authenticationService.currentUserValue;
@@ -84,7 +84,7 @@ export class OneComponent implements OnInit {
               link: '/'
             },
             {
-              name: this.title+'s',
+              name: this.title + 's',
               isLink: false
             }
           ]
@@ -92,17 +92,17 @@ export class OneComponent implements OnInit {
       };
     });
     // content header
- 
+
 
     await this.getAllUsers();
     // this.dataService.toastrSuccess("Users retrieveawait this.getAlld successfully");
   }
 
   async getAllUsers() {
-    
+
     const file_type = this.title;
     this.usersSup = this.dataService
-      .get('urb_requests',{ file_type })
+      .get('urb_requests', { file_type })
       .subscribe(async (res: any) => {
         console.log(res);
         if (res.success) {
@@ -151,7 +151,7 @@ export class OneComponent implements OnInit {
         this.dataService.toastrDanger("Error while taking - Check your info input, " + error);
       });
   }
-  aproveRequest(id){
+  aproveRequest(id) {
     this.router.navigate(['urb_requests/stepper/' + id + '/' + this.title]);
   }
   filterUpdate(event) {

@@ -96,6 +96,13 @@ export class DataService {
     return this.http.put(url, data);
   }
 
+  patch(id: number, status: string) {
+    const url = `${environment.apiUrl}urb_requests/update-status/${id}`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    return this.http.patch(url, { status }, { headers });
+  }
+
   getByID(serviceName: string, id: any): Observable<any> {
 
     const url = environment.apiUrl + serviceName + "/" + id;
@@ -364,4 +371,23 @@ export class DataService {
   }
   getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
     (dateFinal - dateInitial) / (1000 * 3600 * 24);
+
+
+  getStatus(value) {
+    let str = ''
+    if (value === 'agence') {
+      str = "Approver par\nl'agence urbaine\n"
+      return str.replace("\n", "<br>");
+    }
+    else if (value === 'commune') {
+      str = 'Approver par\nla commune\n'
+      return str.replace("\n", "<br>");
+    }
+    else if (value === 'province') {
+      str = 'Approver par\nla province\n'
+      return str.replace("\n", "<br>");
+    } else {
+      return 'En attente'
+    }
+  }
 }

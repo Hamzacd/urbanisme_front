@@ -141,12 +141,11 @@
                     </div>
                 </ng-template>
             </ngx-datatable-column>
-            <ngx-datatable-column [width]="130" name="Status">
-                <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex"
-                    let-row="row">
-                    <div style="color: green; font-size: 20px;" title="Double click to edit">
-                        Approved     
-                      
+            <ngx-datatable-column [width]="130" name="status" prop="status">
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
+                    let-value="value">
+                    <div title="Double click to edit">
+                        <p [innerHTML]="this.dataService.getStatus(value)" class="font-medium-1 line-height-1 mb-0"></p>
                     </div>
                 </ng-template>
             </ngx-datatable-column>

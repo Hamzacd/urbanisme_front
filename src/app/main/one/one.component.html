@@ -39,7 +39,7 @@
                         </ng-template>
                     </ngx-datatable-column>
 
-                    <ngx-datatable-column [width]="250" name="Name" prop="user.name">
+                    <ngx-datatable-column [width]="200" name="Name" prop="user.name">
 
                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
                             let-row="row">
@@ -64,7 +64,7 @@
                         </ng-template>
                     </ngx-datatable-column>
 
-                    <ngx-datatable-column [width]="150" name="Procuration" prop="procuration_file">
+                    <ngx-datatable-column [width]="130" name="Procuration" prop="procuration_file">
                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
                             let-value="value">
                             <div title="Double click to edit">
@@ -78,7 +78,7 @@
                             </div>
                         </ng-template>
                     </ngx-datatable-column>
-                    <ngx-datatable-column [width]="150" name="Propriety" prop="propriety_file">
+                    <ngx-datatable-column [width]="130" name="Propriety" prop="propriety_file">
                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
                             let-value="value">
                             <div title="Double click to edit">
@@ -92,7 +92,7 @@
                             </div>
                         </ng-template>
                     </ngx-datatable-column>
-                    <ngx-datatable-column [width]="150" name="Topographique" prop="topographique_file">
+                    <ngx-datatable-column [width]="130" name="Topographique" prop="topographique_file">
                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
                             let-value="value">
                             <div title="Double click to edit">
@@ -106,7 +106,7 @@
                             </div>
                         </ng-template>
                     </ngx-datatable-column>
-                    <ngx-datatable-column [width]="150" name="Architect" prop="architect_file">
+                    <ngx-datatable-column [width]="130" name="Architect" prop="architect_file">
                         <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex"
                             let-row="row">
                             <div title="Double click to edit">
@@ -144,7 +144,14 @@
                             </div>
                         </ng-template>
                     </ngx-datatable-column> -->
-
+                    <ngx-datatable-column [width]="130" name="status" prop="status">
+                        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
+                            let-value="value">
+                            <div title="Double click to edit">
+                                <p [innerHTML]="this.dataService.getStatus(value)" class="font-medium-1 line-height-1 mb-0"></p>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
                     <ngx-datatable-column  name="Actions" [width]="60" [sortable]="false">
                         <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex"
                             let-row="row">
