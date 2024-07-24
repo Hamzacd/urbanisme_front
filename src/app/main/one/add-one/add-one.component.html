@@ -58,7 +58,7 @@
                 <input type="text" [(ngModel)]="this.user.name" class="form-control" id="name" name="name" formControlName="name"
                   placeholder="Full Name" required=""/>
                 <span *ngIf="!user_form.controls.name.valid && submit_attempt" class="invalid-form">
-                  <small class="form-text text-danger">This field is required!</small>
+                  <small class="form-text text-danger">Ce champ est obligatoire!</small>
                 </span>
               </div>
             </div>
@@ -75,7 +75,7 @@
                 <input type="email" [(ngModel)]="this.user.email" class="form-control" id="email" name="email" formControlName="email"
                   placeholder="Email" required="" />
                 <span *ngIf="!user_form.controls.email.valid && submit_attempt" class="invalid-form">
-                  <small class="form-text text-danger">This field is required!</small>
+                  <small class="form-text text-danger">Ce champ est obligatoire!</small>
                 </span>
               </div> 
             </div> -->
@@ -85,7 +85,7 @@
                 <input type="password" [(ngModel)]="this.user.password" class="form-control" id="password" formControlName="password"
                   name="password" placeholder="Password" required />
                 <span *ngIf="!user_form.controls.password.valid && submit_attempt"  class="invalid-form">
-                  <small class="form-text text-danger">This field is required!</small>
+                  <small class="form-text text-danger">Ce champ est obligatoire!</small>
                 </span>
               </div>
             </div> -->
@@ -111,7 +111,7 @@
                   </div>
                 </div>
                 <span *ngIf="!user_form.controls.password.valid && submit_attempt"  class="invalid-form">
-                  <small class="form-text text-danger">This field is required!</small>
+                  <small class="form-text text-danger">Ce champ est obligatoire!</small>
                 </span>
               </div>
             </div> -->
@@ -122,7 +122,7 @@
                 formControlName="cin" placeholder="BH------" />
             </div>
             <span *ngIf="!user_form.controls.cin.valid && submit_attempt" class="invalid-form">
-              <small class="form-text text-danger">This field is required!</small>
+              <small class="form-text text-danger">Ce champ est obligatoire!</small>
             </span>
           </div> -->
           <!-- <div class="col-12 col-sm-6">
@@ -134,7 +134,7 @@
                   <option value="admin">Admin</option>
                 </select>
                 <span *ngIf="!user_form.controls.role.valid && submit_attempt"  class="invalid-form">
-                  <small class="form-text text-danger">This field is required!</small>
+                  <small class="form-text text-danger">Ce champ est obligatoire!</small>
                 </span>
               </div>
             </div> -->
@@ -147,11 +147,11 @@
             </div> -->
     <div class="row justify-content-between">
       <div class="mb-2">
-        <label for="formFile" class="form-label">Upload d’un certificat de propriété (Obligatoire)</label>
+        <label for="formFile" class="form-label">certificat de propriété (Obligatoire)</label>
         <input class="form-control" type="file" name="proprietyFile" formControlName="proprietyFile"
           (change)="proprietyFile($event)" id="formFile">
         <span *ngIf="!user_form.controls.proprietyFile.valid && submit_attempt" class="invalid-form">
-          <small class="form-text text-danger">This field is required!</small>
+          <small class="form-text text-danger">Ce champ est obligatoire!</small>
         </span>
         <!-- <a href="javascript:void(0);" class="mr-25">
           <img
@@ -164,11 +164,11 @@
           <input class="form-control" type="file" (change)="" id="formFileMultiple" multiple>
         </div> -->
       <div class="mb-2">
-        <label for="formFileDisabled" class="form-label">Upload Plan d’architecture (Obligatoire)</label>
+        <label for="formFileDisabled" class="form-label">Plan d’architecture (Obligatoire)</label>
         <input class="form-control" type="file" name="architectFile" formControlName="architectFile"
           (change)="architictureFile($event)" id="formFileDisabled">
         <span *ngIf="!user_form.controls.architectFile.valid && submit_attempt" class="invalid-form">
-          <small class="form-text text-danger">This field is required!</small>
+          <small class="form-text text-danger">Ce champ est obligatoire!</small>
         </span>
         <!-- <a href="javascript:void(0);" class="mr-25">
           <img
@@ -178,11 +178,11 @@
       </div>
 
       <div class="mb-2">
-        <label for="formFileSm" class="form-label">Upload Levé topographique de la parcelle (Obligatoire)</label>
+        <label for="formFileSm" class="form-label">Levé topographique de la parcelle (Obligatoire)</label>
         <input class="form-control" id="formFileSm" type="file" name="topographiqueFile"
           formControlName="topographiqueFile" (change)="topographiqueFile($event)">
         <span *ngIf="!user_form.controls.topographiqueFile.valid && submit_attempt" class="invalid-form">
-          <small class="form-text text-danger">This field is required!</small>
+          <small class="form-text text-danger">Ce champ est obligatoire!</small>
         </span>
         <!-- <a href="javascript:void(0);" class="mr-25">
           <img
@@ -191,11 +191,11 @@
         </a> -->
       </div>
       <div class="mb-2">
-        <label for="formFileLg" class="form-label">Upload de la procuration (Obligatoire)</label>
+        <label for="formFileLg" class="form-label">la procuration (Obligatoire)</label>
         <input class="form-control" id="formFileLg" type="file" name="procurationFile" formControlName="procurationFile"
           (change)="procurationFile($event)">
         <span *ngIf="!user_form.controls.procurationFile.valid && submit_attempt" class="invalid-form">
-          <small class="form-text text-danger">This field is required!</small>
+          <small class="form-text text-danger">Ce champ est obligatoire!</small>
         </span>
         <!-- <a href="javascript:void(0);" class="mr-25">
           <img
@@ -205,9 +205,9 @@
       </div>
     </div>
           <div class="mb-3">
-            <button type="submit" class="btn btn-primary mr-1" rippleEffect [disabled]="uploading">Save changes</button>
+            <button type="submit" class="btn btn-primary mr-1" rippleEffect [disabled]="uploading">Sauvegarder les modifications</button>
             <button type="reset" class="btn btn-outline-secondary " rippleEffect [disabled]="uploading"
-              routerLink="/urb_requests/list/{{ title }}">Cancel</button>
+              routerLink="/urb_requests/list/{{ title }}">Annuler</button>
           </div>
           <!-- </div> -->
         </form>

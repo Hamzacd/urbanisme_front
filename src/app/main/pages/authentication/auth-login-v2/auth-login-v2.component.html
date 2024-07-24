@@ -23,8 +23,8 @@
     <!-- Login-->
     <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
       <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-        <h2 class="card-title font-weight-bold mb-1">Welcome to {{ coreConfig.app.appName }}! 👋</h2>
-        <p class="card-text mb-2">Please sign-in to your account and start the manage your stock</p>
+        <h2 class="card-title font-weight-bold mb-1">Bienvenue à {{ coreConfig.app.appName }}! 👋</h2>
+        <p class="card-text mb-2">Veuillez vous connecter à votre compte et commencer à gérer vos demandes</p>
 
         <ngb-alert [type]="'danger'" [dismissible]="false" *ngIf="error">
           <div class="alert-body">
@@ -34,7 +34,7 @@
 
         <form class="auth-login-form mt-2" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <label class="form-label" for="login-email">Email</label>
+            <label class="form-label" for="login-email">E-mail</label>
             <input
               type="text"
               formControlName="email"
@@ -46,14 +46,14 @@
               tabindex="1"
             />
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
-              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              <div *ngIf="f.email.errors.required">L'e-mail est requis</div>
+              <div *ngIf="f.email.errors.email">L'e-mail doit être une adresse e-mail valide</div>
             </div>
           </div>
           <div class="form-group">
             <div class="d-flex justify-content-between">
-              <label for="login-password">Password</label
-              ><a routerLink="/pages/authentication/forgot-password-v2"><small>Forgot Password?</small></a>
+              <label for="login-password">Mot de passe</label
+              ><a routerLink="/pages/authentication/forgot-password-v2"><small>Mot de passe oublié?</small></a>
             </div>
             <div class="input-group input-group-merge form-password-toggle">
               <input
@@ -83,22 +83,22 @@
               class="invalid-feedback"
               [ngClass]="{ 'd-block': submitted && f.password.errors }"
             >
-              <div *ngIf="f.password.errors.required">Password is required</div>
+              <div *ngIf="f.password.errors.required">Mot de passe requis</div>
             </div>
           </div>
           <div class="form-group">
             <div class="custom-control custom-checkbox">
               <input class="custom-control-input" id="remember-me" type="checkbox" tabindex="3" />
-              <label class="custom-control-label" for="remember-me"> Remember Me</label>
+              <label class="custom-control-label" for="remember-me">souviens-toi de moi</label>
             </div>
           </div>
           <button [disabled]="loading" class="btn btn-primary btn-block" tabindex="4" rippleEffect>
-            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Sign in
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Se connecter
           </button>
         </form>
         <p class="text-center mt-2">
           <span>New on our platform?</span
-          ><a routerLink="/pages/authentication/register"><span>&nbsp;Create an account</span></a>
+          ><a routerLink="/pages/authentication/register"><span>&nbsp;Créer un compte</span></a>
         </p>
         <!-- <div class="divider my-2">
           <div class="divider-text">or</div>

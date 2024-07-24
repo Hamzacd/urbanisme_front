@@ -82,7 +82,7 @@ export class EditOneComponent implements OnInit {
 
       this.EditUserSup = this.dataService.put('urb_requests', this.user).subscribe(async (res: any) => {
         if (res.success) {
-          this.dataService.toastrSuccess("User has been updated");
+          this.dataService.toastrSuccess("L'utilisateur a été mis à jour");
           this.content_loaded = false;
           setTimeout(async () => {
             // Redirect to list
@@ -117,12 +117,12 @@ export class EditOneComponent implements OnInit {
         type: '',
         links: [
           {
-            name: 'Home',
+            name: 'Accueil',
             isLink: true,
             link: '/'
           },
           {
-            name: 'Edit ' + this.title,
+            name: 'Modifier ' + this.title,
             isLink: false
           }
         ]
@@ -144,12 +144,12 @@ export class EditOneComponent implements OnInit {
 
 
       } else {
-        console.log('Error while taking - Check your info input');
+        console.log("Erreur lors de la prise - Vérifiez votre saisie d'informations");
       }
     },
     async (error: any) => {
       console.log(error)
-      this.dataService.toastrDanger("Error while taking - Check your info input " + error);
+      this.dataService.toastrDanger("Erreur lors de la prise - Vérifiez votre saisie d'informations" + error);
     });
   }
 

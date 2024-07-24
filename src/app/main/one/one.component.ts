@@ -73,18 +73,18 @@ export class OneComponent implements OnInit {
       this.title = params['title'];
       this.getAllUsers();
       this.contentHeader = {
-        headerTitle: this.title + 's',
+        headerTitle: this.title !== 'Permis d’habiter'? this.title + 's' : this.title,
         actionButton: true,
         breadcrumb: {
           type: '',
           links: [
             {
-              name: 'Home',
+              name: 'Accueil',
               isLink: true,
               link: '/'
             },
             {
-              name: this.title + 's',
+              name: this.title !== 'Permis d’habiter'? this.title + 's' : this.title,
               isLink: false
             }
           ]
@@ -172,13 +172,14 @@ export class OneComponent implements OnInit {
     let that = this;
 
     Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to Cancel this!",
+      title: 'es-tu sûr?',
+      text: "Vous ne pourrez pas revenir en arrière !",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#7367F0',
       cancelButtonColor: '#E42728',
-      confirmButtonText: 'Yes, cancel it!',
+      confirmButtonText: 'Oui, annulez-le !',
+      cancelButtonText: 'Annuler',
       customClass: {
         confirmButton: 'btn btn-primary',
         cancelButton: 'btn btn-danger ml-1'

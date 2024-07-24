@@ -106,7 +106,7 @@ export class EditProfileComponent implements OnInit {
               // await this.router.navigate(['/']);
               this.content_loaded = true;
             }, 800);
-            this.dataService.toastrSuccess("Password has been updated");
+            this.dataService.toastrSuccess("Le mot de passe a été mis à jour");
 
 
           }
@@ -222,18 +222,18 @@ export class EditProfileComponent implements OnInit {
 
     // content header
     this.contentHeader = {
-      headerTitle: 'Profile',
+      headerTitle: 'Profil',
       actionButton: true,
       breadcrumb: {
         type: '',
         links: [
           {
-            name: 'Home',
+            name: 'Accueil',
             isLink: true,
             link: '/'
           },
           {
-            name: 'Edit Profile',
+            name: 'Editer le profil',
             isLink: false,
             // link: '/profile'
           }

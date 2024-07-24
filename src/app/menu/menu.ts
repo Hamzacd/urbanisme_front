@@ -3,7 +3,7 @@ import { CoreMenu } from '@core/types'
 export const menu: CoreMenu[] = [
   {
     id: 'home',
-    title: 'Dashboard',
+    title: 'Tableau de bord',
     translate: 'MENU.HOME',
     role: ['admin'],
     type: 'item',
@@ -12,7 +12,7 @@ export const menu: CoreMenu[] = [
   },
   {
     id: 'user',
-    title: 'Users',
+    title: 'Utilisateurs',
     translate: 'MENU.USER.COLLAPSIBLE',
     type: 'collapsible',
     icon: 'user-check',
@@ -50,7 +50,7 @@ export const menu: CoreMenu[] = [
         translate: 'MENU.CONSTRUCTION.LIST',
         type: 'item',
         icon: 'circle',
-        url: 'urb_requests/list/Constraction'
+        url: 'urb_requests/list/Construction'
       },
       {
         id: 'add_construction',
@@ -59,7 +59,7 @@ export const menu: CoreMenu[] = [
         type: 'item',
         icon: 'circle',
         role: ['manager'],
-        url: 'urb_requests/add/Constraction'
+        url: 'urb_requests/add/Construction'
       }
     ]
   },
@@ -77,7 +77,7 @@ export const menu: CoreMenu[] = [
         translate: 'MENU.REPARATION.LIST',
         type: 'item',
         icon: 'circle',
-        url: 'urb_requests/list/Reparation'
+        url: 'urb_requests/list/Rréparation'
       },
       {
         id: 'add_reparation',
@@ -86,7 +86,7 @@ export const menu: CoreMenu[] = [
         type: 'item',
         icon: 'circle',
         role: ['manager'],
-        url: 'urb_requests/add/Reparation'
+        url: 'urb_requests/add/Rréparation'
       }
     ]
   },

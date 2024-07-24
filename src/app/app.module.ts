@@ -68,7 +68,7 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/urb_requests/list/Constraction',
+    redirectTo: '/urb_requests/list/Construction',
     pathMatch: 'full',
     data: { animation: 'sample', roles: [Role.Admin] },
     // canActivate: [AuthGuard]

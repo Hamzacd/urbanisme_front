@@ -138,7 +138,7 @@ export class UsersComponent implements OnInit {
 
           this.table.offset = 0;
 
-          this.dataService.toastrSuccess("Status has been updated");
+          this.dataService.toastrSuccess("le statut a été mis à jour");
 
           // console.log("users : ",this.users)
         }
@@ -166,13 +166,14 @@ export class UsersComponent implements OnInit {
     let that = this;
 
     Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: 'es-tu sûr?',
+      text: "Vous ne pourrez pas revenir en arrière !",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#7367F0',
       cancelButtonColor: '#E42728',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Oui, annulez-le !',
+      cancelButtonText: 'Annuler',
       customClass: {
         confirmButton: 'btn btn-primary',
         cancelButton: 'btn btn-danger ml-1'

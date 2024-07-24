@@ -140,13 +140,13 @@ export class SettingsComponent implements OnInit {
           setTimeout(async () => {
             this.content_loaded = true;
           }, 800);
-          this.dataService.toastrSuccess("Settings has been updated");
+          this.dataService.toastrSuccess("Les paramètres ont été mis à jour");
 
         }
       },
         async (error: any) => {
           console.log(error)
-          this.dataService.toastrDanger("Error while changing info User, " + error);
+          this.dataService.toastrDanger("Erreur lors de la modification des informations utilisateur, " + error);
           setTimeout(async () => {
             this.content_loaded = true;
           }, 800);
@@ -181,13 +181,13 @@ export class SettingsComponent implements OnInit {
         setTimeout(async () => {
           this.content_loaded = true;
         }, 800);
-        this.dataService.toastrSuccess("Settings has been updated");
+        this.dataService.toastrSuccess("Les paramètres ont été mis à jour");
 
       }
     },
       async (error: any) => {
         console.log(error)
-        this.dataService.toastrDanger("Error while changing info User, " + error);
+        this.dataService.toastrDanger("Erreur lors de la modification des informations utilisateur " + error);
         setTimeout(async () => {
           this.content_loaded = true;
         }, 800);

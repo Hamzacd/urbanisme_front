@@ -12,7 +12,7 @@
                             <a ngbNavLink class="nav-link d-flex py-75" id="account-pill-general" data-toggle="pill"
                                 href="#account-vertical-general" aria-expanded="true">
                                 <i data-feather="user" class="font-medium-3 mr-1"></i>
-                                <span class="font-weight-bold">General</span>
+                                <span class="font-weight-bold">générale</span>
                             </a>
                             <ng-template ngbNavContent>
                                 <div class="card">
@@ -27,19 +27,19 @@
                                             <div class="media-body mt-75 ml-1">
                                                 <button (click)="file.click()" for="account-upload"
                                                     class="btn btn-sm btn-primary mb-75 mr-75" rippleEffect>
-                                                    Upload
+                                                    Télécharger
                                                 </button>
                                                 <input type="file" #file id="account-upload" hidden accept="image/*"
                                                     (change)="selectFile($event)" />
                                                 <!-- <button class="btn btn-sm btn-outline-secondary mb-75" rippleEffect>Reset</button> -->
-                                                <p>Allowed JPG, GIF or PNG. Max size of 800kB</p>
+                                                <p>Permis JPG, GIF or PNG. Max size of 800kB</p>
                                             </div>
                                             <!--/ upload and reset button -->
                                         </div>
 
                                         <div id="" class="mt-1" *ngIf="uploading">
                                             <div class="progress-wrapper">
-                                                <div class="mb-25">Uploading &hellip; {{ this.progress }}%</div>
+                                                <div class="mb-25">Téléchargement &hellip; {{ this.progress }}%</div>
                                                 <ngb-progressbar type="primary"
                                                     [value]="this.progress"></ngb-progressbar>
                                             </div>
@@ -52,63 +52,61 @@
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="name">Full name</label>
+                                                        <label for="name">Nom et prénom</label>
                                                         <input type="text" [(ngModel)]="this.user.name"
                                                             class="form-control" id="name" name="name"
-                                                            placeholder="Full Name"
+                                                            placeholder="Nom et prénom"
                                                             [class.error]="UserGeneralForm.submitted && FNameRef.invalid"
                                                             #FNameRef="ngModel" required aria-label="Full Name"
                                                             aria-describedby="basic-icon-default-name2" />
                                                         <span *ngIf="UserGeneralForm.submitted && FNameRef.invalid"
                                                             class="invalid-form">
                                                             <small class="form-text text-danger"
-                                                                *ngIf="FNameRef.errors.required">This field is
-                                                                required!</small>
+                                                                *ngIf="FNameRef.errors.required">Ce champ est obligatoire!</small>
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="name">Email</label>
+                                                        <label for="name">E-mail</label>
                                                         <input type="email" [(ngModel)]="this.newEmail"
                                                             class="form-control" id="email" name="email"
-                                                            placeholder="Email"
+                                                            placeholder="E-mail"
                                                             [class.error]="UserGeneralForm.submitted && FEmailRef.invalid"
                                                             #FEmailRef="ngModel" required aria-label="Email"
                                                             aria-describedby="basic-icon-default-name2" />
                                                         <span *ngIf="UserGeneralForm.submitted && FEmailRef.invalid"
                                                             class="invalid-form">
                                                             <small class="form-text text-danger"
-                                                                *ngIf="FEmailRef.errors.required">This field is
-                                                                required!</small>
+                                                                *ngIf="FEmailRef.errors.required">Ce champ est obligatoire!</small>
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="status">Status</label>
+                                                        <label for="status">Statut</label>
                                                         <select id="status" class="form-control"
-                                                            placeholder="Status of User" name="status" disabled>
+                                                            placeholder="Statut of User" name="status" disabled>
                                                             <option
                                                                 [selected]="this.user.status === 1 ? true : false"
-                                                                value="1">Activated</option>
+                                                                value="1">Activé</option>
                                                             <option
                                                                 [selected]="this.user.status === 0 ? true : false"
-                                                                value="0">Deactivated</option>
+                                                                value="0">Désactivé</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="role">Role</label>
+                                                        <label for="role">Rôle</label>
                                                         <select id="role" class="form-control"
                                                             placeholder="Select Role of User" name="role" disabled>
                                                             <option
                                                                 [selected]="this.user.role_user.role === 'admin' ? true : false"
-                                                                value="admin">Admin</option>
+                                                                value="admin">Administrateur</option>
                                                             <option
                                                                 [selected]="this.user.role_user.role === 'manager' ? true : false"
-                                                                value="manager">Manager</option>
+                                                                value="manager">utilisateur</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -125,10 +123,10 @@
                                                 <div class="col-12">
                                                     <button type="submit" class="btn btn-primary mt-2 mr-1" rippleEffect
                                                         [disabled]="uploading"
-                                                        (click)="editProfileGeneral(UserGeneralForm)">Save changes</button>
+                                                        (click)="editProfileGeneral(UserGeneralForm)">Sauvegarder les modifications</button>
                                                     <button type="reset" class="btn btn-outline-secondary mt-2"
                                                         [disabled]="uploading" routerLink="/"
-                                                        rippleEffect>Cancel</button>
+                                                        rippleEffect>Annuler</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -141,7 +139,7 @@
                             <a ngbNavLink class="nav-link d-flex py-75" id="account-pill-password" data-toggle="pill"
                                 href="#account-vertical-password" aria-expanded="false">
                                 <i data-feather="lock" class="font-medium-3 mr-1"></i>
-                                <span class="font-weight-bold">Change Password</span>
+                                <span class="font-weight-bold">Changer le mot de passe</span>
                             </a>
                             <ng-template ngbNavContent>
                                 <div class="card">
@@ -152,11 +150,11 @@
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="old-password">Old Password</label>
+                                                        <label for="old-password">Ancien mot de passe</label>
                                                         <div class="input-group form-password-toggle input-group-merge">
                                                             <input [type]="passwordTextTypeOld ? 'text' : 'password'"
                                                                 class="form-control" id="old-password"
-                                                                name="password" placeholder="Old Password" 
+                                                                name="password" placeholder="Ancien mot de passe" 
                                                                 [(ngModel)]="this.OldPassword"
                                                                 [class.error]="UserPasswordForm.submitted && FOldPasswordRef.invalid"
                                                                 #FOldPasswordRef="ngModel" required aria-label="New Password" aria-describedby="basic-icon-default-name2"/>
@@ -170,8 +168,7 @@
                                                         </div>
                                                         
                                                         <span *ngIf="UserPasswordForm.submitted && FOldPasswordRef.invalid" class="invalid-form">
-                                                            <small class="form-text text-danger" *ngIf="FOldPasswordRef.errors.required">This field is
-                                                              required!</small>
+                                                            <small class="form-text text-danger" *ngIf="FOldPasswordRef.errors.required">Ce champ est obligatoire!</small>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -179,11 +176,11 @@
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="new-password">New Password</label>
+                                                        <label for="new-password">Nouveau mot de passe</label>
                                                         <div class="input-group form-password-toggle input-group-merge">
                                                             <input [type]="passwordTextTypeNew ? 'text' : 'password'"
                                                                 id="new-password" name="new-password"
-                                                                class="form-control" placeholder="New Password"  
+                                                                class="form-control" placeholder="Nouveau mot de passe"  
                                                                 [(ngModel)]="this.NewPassword" 
                                                                 [class.error]="UserPasswordForm.submitted && FNewPasswordRef.invalid"
                                                                 #FNewPasswordRef="ngModel" required aria-label="New Password" aria-describedby="basic-icon-default-name2"/>
@@ -196,20 +193,18 @@
                                                             </div>
                                                         </div>
                                                         <span *ngIf="UserPasswordForm.submitted && FNewPasswordRef.invalid" class="invalid-form">
-                                                            <small class="form-text text-danger" *ngIf="FNewPasswordRef.errors.required">This field is
-                                                              required!</small>
+                                                            <small class="form-text text-danger" *ngIf="FNewPasswordRef.errors.required">Ce champ est obligatoire!</small>
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="retype-new-password">Retype New
-                                                            Password</label>
+                                                        <label for="retype-new-password">Re-taper le nouveau mot de passe</label>
                                                         <div class="input-group form-password-toggle input-group-merge">
                                                             <input [type]="passwordTextTypeRetype ? 'text' : 'password'"
                                                                 class="form-control" id="retype-new-password"
                                                                 name="confirm-new-password"
-                                                                placeholder="Retype New Password"   
+                                                                placeholder="Re-taper le nouveau mot de passe"   
                                                                 [(ngModel)]="this.RetypeNewPassword" 
                                                                 [class.error]="UserPasswordForm.submitted && FRetypePasswordRef.invalid"
                                                                 #FRetypePasswordRef="ngModel" required aria-label="Retype New Password" aria-describedby="basic-icon-default-name2"/>
@@ -223,8 +218,7 @@
                                                             </div>
                                                         </div>
                                                         <span *ngIf="UserPasswordForm.submitted && FRetypePasswordRef.invalid" class="invalid-form">
-                                                            <small class="form-text text-danger" *ngIf="FRetypePasswordRef.errors.required">This field is
-                                                              required!</small>
+                                                            <small class="form-text text-danger" *ngIf="FRetypePasswordRef.errors.required">Ce champ est obligatoire!</small>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -232,7 +226,7 @@
                                                   <button type="submit" class="btn btn-primary mt-2 mr-1" rippleEffect [disabled]="uploading"
                                                     (click)="editProfilePassword(UserPasswordForm)">Save changes</button>
                                                   <button type="reset" class="btn btn-outline-secondary mt-2" rippleEffect [disabled]="uploading"
-                                                    routerLink="/users/list">Cancel</button>
+                                                    routerLink="/users/list">Annuler</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -257,7 +251,7 @@
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                       <label class="form-label" for="adresse">Adresse</label>
-                                                      <textarea class="form-control dt-adresse" id="adresse" rows="3" placeholder="Adresse of user"
+                                                      <textarea class="form-control dt-adresse" id="adresse" rows="3" placeholder="Adresse"
                                                         name="adresse" [(ngModel)]="this.user.adresse">{{this.user.adresse}}</textarea>
                                                     </div>
                                                   </div>
@@ -270,14 +264,14 @@
                                                   </div>
                                                   <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                      <label for="name">Phone</label>
+                                                      <label for="name">Téléphone</label>
                                                       <input type="tel" [(ngModel)]="this.user.phone" class="form-control" id="phone" name="phone"
-                                                        placeholder="Phone" />
+                                                        placeholder="Téléphone" />
                                                     </div>
                                                   </div>
                                                   <div class="col-12">
                                                     <button type="submit" class="btn btn-primary mt-2 mr-1" rippleEffect [disabled]="uploading"
-                                                      (click)="editProfileInfo(UserInfoForm)">Save changes</button>
+                                                      (click)="editProfileInfo(UserInfoForm)">Sauvegarder les modifications</button>
                                                     <button type="reset" class="btn btn-outline-secondary mt-2" rippleEffect [disabled]="uploading"
                                                       routerLink="/users/list">Cancel</button>
                                                   </div>

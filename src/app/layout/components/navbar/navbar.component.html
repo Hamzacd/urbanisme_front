@@ -63,13 +63,13 @@
         </ng-container>
       </a>
       <div ngbDropdownMenu aria-labelledby="navbarUserDropdown" class="dropdown-menu dropdown-menu-right">
-        <a ngbDropdownItem [routerLink]="['/profile']"> <span [data-feather]="'user'" [class]="'mr-50'"></span> Profile</a>
-        <a ngbDropdownItem [routerLink]="['/settings']" *ngIf="this.currentUser.role == 'admin'"> <span [data-feather]="'settings'" [class]="'mr-50'"></span> Setting</a>
+        <a ngbDropdownItem [routerLink]="['/profile']"> <span [data-feather]="'user'" [class]="'mr-50'"></span>Profil</a>
+        <a ngbDropdownItem [routerLink]="['/settings']" *ngIf="this.currentUser.role == 'admin'"> <span [data-feather]="'settings'" [class]="'mr-50'"></span> Paramètre</a>
           <!-- <a ngbDropdownItem [routerLink]="['/']"> <span [data-feather]="'mail'" [class]="'mr-50'"></span> Inbox</a>
           <a ngbDropdownItem [routerLink]="['/']"> <span [data-feather]="'check-square'" [class]="'mr-50'"></span> Task</a>
           <a ngbDropdownItem [routerLink]="['/']"><span [data-feather]="'message-square'" [class]="'mr-50'"></span> Chats</a> -->
         <div class="dropdown-divider"></div>
-        <a ngbDropdownItem (click)="logout()"><span [data-feather]="'power'" [class]="'mr-50'"></span> Logout</a>
+        <a ngbDropdownItem (click)="logout()"><span [data-feather]="'power'" [class]="'mr-50'"></span>Se déconnecter</a>
       </div>
     </li>
     <!--/ User Dropdown -->

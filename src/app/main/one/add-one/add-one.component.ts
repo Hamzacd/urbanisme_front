@@ -156,7 +156,7 @@ export class AddOneComponent implements OnInit {
     // Setup form
     this.user_form = this.formBuilder.group({
       architectFile: ['', [Validators.required]],
-      procurationFile: ['', [Validators.required]],
+      procurationFile: [''],
       proprietyFile: ['', [Validators.required]],
       topographiqueFile: ['', [Validators.required]],
       cin: [''],
@@ -179,12 +179,12 @@ export class AddOneComponent implements OnInit {
         type: '',
         links: [
           {
-            name: 'Home',
+            name: 'Accueil',
             isLink: true,
             link: '/'
           },
           {
-            name: 'add ' + this.title,
+            name: 'ajouter ' + this.title,
             isLink: false
           }
         ]

@@ -106,7 +106,7 @@ export class SteeperComponent implements OnInit {
           async (res: any) => {
             if (res.success) {  
               this.content_loaded = true;
-              this.dataService.toastrSuccess("Status has been updated");
+              this.dataService.toastrSuccess("Le statut a été mis à jour");
               if (res.data.status === 'province') {
                 this.router.navigate(['urb_requests/list/' + this.title]);
               }
@@ -116,7 +116,7 @@ export class SteeperComponent implements OnInit {
           },
           error => {
             console.log(error)
-            this.dataService.toastrDanger("Error while taking - Check your info input, " + error);
+            this.dataService.toastrDanger("Erreur lors de la prise - Vérifiez votre saisie d'informations, " + error);
           }
         );
       }

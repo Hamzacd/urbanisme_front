@@ -8,8 +8,7 @@
                 <div class="row py-1">
                     <div  class="col-md-6 col-12">
                         <button class="btn btn-primary ml-1" [disabled]="this.userRole == 'admin'" rippleEffect routerLink="/urb_requests/add/{{ this.title }}">
-                            <i data-feather="plus" class="mr-0 mr-sm-1"></i><span class="d-none d-sm-inline-block">Add
-                                New
+                            <i data-feather="plus" class="mr-0 mr-sm-1"></i><span class="d-none d-sm-inline-block">Ajouter Nouveau
                                 {{ title }}</span>
                         </button>
 
@@ -18,17 +17,17 @@
                     </div>
                     <div class="col-md-6 col-12 d-flex justify-content-md-end">
                         <div class="d-flex align-items-center justify-content-end pr-1 pb-1 pl-1 pl-md-0 pb-md-0">
-                            <label class="d-flex align-items-center">Search<input type="search" placeholder="Search"
+                            <label class="d-flex align-items-center">Recherche<input type="search" placeholder="Search"
                                     class="form-control ml-25" (keyup)="filterUpdate($event)"
                                     (search)="filterUpdate($event)" /></label>
                         </div>
                         <a (click)="this.exportData.exportAsExcelFile(users,'Usres')" class="btn btn-outline-secondary float-right mr-1" rippleEffect
-                        >Export Excel</a>
+                        >Exporter Excel</a>
                     </div>
                 </div>
                 <ngx-datatable *ngIf="this.content_loaded == true" class="bootstrap core-bootstrap" [headerHeight]="40"
                     [rowHeight]="58" [limit]="10" [columnMode]="ColumnMode.force" [footerHeight]="25" [rows]="users"
-                    [scrollbarH]="true">
+                    [scrollbarH]="true" [messages]="{emptyMessage: 'Aucune donnée à afficher'}">
 
                     <ngx-datatable-column [width]="10" name="id" prop="id">
                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
@@ -144,7 +143,7 @@
                             </div>
                         </ng-template>
                     </ngx-datatable-column> -->
-                    <ngx-datatable-column [width]="130" name="status" prop="status">
+                    <ngx-datatable-column [width]="130" name="Statut" prop="status">
                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
                             let-value="value">
                             <div title="Double click to edit">
