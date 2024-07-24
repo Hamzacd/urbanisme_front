@@ -55,7 +55,7 @@
         id="navbarUserDropdown" aria-haspopup="true" aria-expanded="false">
         <ng-container *ngIf="this.currentUser">
           <div class="user-nav d-sm-flex d-none">
-            <span class="user-name font-weight-bolder">{{ this.currentUser.name }}</span><span class="user-status">{{ this.currentUser.role }}</span>
+            <span class="user-name font-weight-bolder">{{ this.currentUser.name }}</span><span class="user-status">{{ this.currentUser.role == 'admin' ? 'Administrateur' : 'utilisateur'}}</span>
           </div>
           <span class="avatar"><img class="round"
               [src]="this.currentUser.avatare ? USER_IMAGE_PATH + this.currentUser.avatare : 'assets/images/default_images/simple_user.png'"
