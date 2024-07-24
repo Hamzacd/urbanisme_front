@@ -64,18 +64,18 @@ export class UsersComponent implements OnInit {
 
     // content header
     this.contentHeader = {
-      headerTitle: 'Users',
+      headerTitle: 'Utilisateurs',
       actionButton: true,
       breadcrumb: {
         type: '',
         links: [
           {
-            name: 'Home',
+            name: 'Accueil',
             isLink: true,
             link: '/'
           },
           {
-            name: 'Users',
+            name: 'Utilisateurs',
             isLink: false
           }
         ]
@@ -187,7 +187,7 @@ export class UsersComponent implements OnInit {
           if (res.success) {
             that.content_loaded = false;
             await that.getAllUsers();
-            that.dataService.toastrInfo("User has been deleted")
+            that.dataService.toastrInfo("L'utilisateur a été supprimé")
             that.table.offset = 0;
           }
         }, async (error: any) => {

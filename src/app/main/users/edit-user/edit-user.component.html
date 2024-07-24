@@ -15,18 +15,18 @@
           <!-- upload and reset button -->
           <div class="media-body mt-75 ml-1">
             <button (click)="file.click()" for="account-upload" class="btn btn-sm btn-primary mb-75 mr-75" rippleEffect>
-              Upload
+              Télécharger
             </button>
             <input type="file" #file id="account-upload" hidden accept="image/*" (change)="selectFile($event)" />
             <!-- <button class="btn btn-sm btn-outline-secondary mb-75" rippleEffect>Reset</button> -->
-            <p>Allowed JPG, GIF or PNG. Max size of 800kB</p>
+            <p>Permise JPG, GIF or PNG. Max size of 800kB</p>
           </div>
           <!--/ upload and reset button -->
         </div>
 
         <div id="" class="mt-1" *ngIf="uploading">
           <div class="progress-wrapper">
-            <div class="mb-25">Uploading &hellip; {{ this.progress }}%</div>
+            <div class="mb-25">Téléchargement &hellip; {{ this.progress }}%</div>
             <ngb-progressbar type="primary" [value]="this.progress"></ngb-progressbar>
           </div>
         </div>
@@ -38,7 +38,7 @@
           <div class="row">
             <div class="col-12 col-sm-6 mb-2">
               <div class="custom-control custom-switch">
-                <p class="mb-50 font-weight-bold">Status (Actived)</p>
+                <p class="mb-50 font-weight-bold">Statut (actif)</p>
               </div>
               <div class="col-12 col-sm-6 custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="status" [(ngModel)]="this.user.status"
@@ -53,20 +53,20 @@
           <div class="row">
             <div class="col-12 col-sm-6">
               <div class="form-group">
-                <label for="name">Full name</label>
+                <label for="name">Nom et prénom</label>
                 <input type="text" [(ngModel)]="this.user.name" class="form-control" id="name" name="name"
-                  placeholder="Full Name" [class.error]="UserForm.submitted && FNameRef.invalid" #FNameRef="ngModel"
+                  placeholder="Nom et prénom" [class.error]="UserForm.submitted && FNameRef.invalid" #FNameRef="ngModel"
                   required aria-label="Full Name" aria-describedby="basic-icon-default-name2" />
                 <span *ngIf="UserForm.submitted && FNameRef.invalid" class="invalid-form">
-                  <small class="form-text text-danger" *ngIf="FNameRef.errors.required">This field is required!</small>
+                  <small class="form-text text-danger" *ngIf="FNameRef.errors.required">Ce champ est obligatoire!</small>
                 </span>
               </div>
             </div>
             <div class="col-12 col-sm-6">
               <div class="form-group">
-                <label for="name">Phone</label>
+                <label for="name">Téléphone</label>
                 <input type="tel" [(ngModel)]="this.user.phone" class="form-control" id="phone" name="phone"
-                  placeholder="Phone" />
+                  placeholder="Téléphone" />
               </div>
             </div>
             <div class="col-12 col-sm-6">
@@ -76,7 +76,7 @@
                   placeholder="Email" [class.error]="UserForm.submitted && FEmailRef.invalid" #FEmailRef="ngModel"
                   required aria-label="Email" aria-describedby="basic-icon-default-name2" />
                 <span *ngIf="UserForm.submitted && FEmailRef.invalid" class="invalid-form">
-                  <small class="form-text text-danger" *ngIf="FEmailRef.errors.required">This field is required!</small>
+                  <small class="form-text text-danger" *ngIf="FEmailRef.errors.required">Ce champ est obligatoire!</small>
                 </span>
               </div>
             </div>
@@ -95,13 +95,13 @@
 
             <div class="col-12 col-sm-6">
               <div class="form-group">
-                <label for="password">New Password</label>
+                <label for="password">Nouveau mot de passe</label>
                 <div class="input-group">
                   <input
                     type="text"
                     id="password"
                     class="form-control"
-                    placeholder="Password"
+                    placeholder="mot de passe"
                     name="password"
                     aria-describedby="button-addon2"
                     [(ngModel)]="this.user.password"
@@ -112,13 +112,12 @@
                     <button *ngIf="this.isGenerated" class="btn btn-outline-primary" type="button" (click)="generatePassword()" rippleEffect>Generate</button>
                     <button *ngIf="!this.isGenerated" class="btn btn-outline-primary" type="button" disabled rippleEffect>
                       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                      <span class="ml-25 align-middle">Generate...</span>
+                      <span class="ml-25 align-middle">Générer...</span>
                     </button>
                   </div>
                 </div>
                 <span *ngIf="UserForm.submitted && FPasswordRef.invalid" class="invalid-form">
-                  <small class="form-text text-danger" *ngIf="FPasswordRef.errors.required">This field is
-                    required!</small>
+                  <small class="form-text text-danger" *ngIf="FPasswordRef.errors.required">Ce champ est obligatoire!</small>
                 </span>
               </div>
             </div>
@@ -132,26 +131,26 @@
             </div>
             <div class="col-12 col-sm-6">
               <div class="form-group">
-                <label for="role">Role</label>
-                <select id="role" class="form-control" placeholder="Select Role of User" name="role"
+                <label for="role">Rôle</label>
+                <select id="role" class="form-control" placeholder="Sélectionnez le rôle de l'utilisateur" name="role"
                   [(ngModel)]="this.user.role">
-                  <option value="admin">Admin</option>
-                  <option value="manager">Manager</option>
+                  <option value="manager">utilisateur</option>
+                  <option value="admin">Administrateur</option>
                 </select>
               </div>
             </div>
             <div class="col-12">
               <div class="form-group">
                 <label class="form-label" for="adresse">Adresse</label>
-                <textarea class="form-control dt-adresse" id="adresse" rows="3" placeholder="Adresse of user"
+                <textarea class="form-control dt-adresse" id="adresse" rows="3" placeholder="Adresse de l'utilisateur"
                   name="adresse" [(ngModel)]="this.user.adresse">{{this.user.adresse}}</textarea>
               </div>
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-primary mt-2 mr-1" rippleEffect [disabled]="uploading"
-                (click)="editUser(UserForm)">Save changes</button>
+                (click)="editUser(UserForm)">Sauvegarder les modifications</button>
               <button type="reset" class="btn btn-outline-secondary mt-2" rippleEffect [disabled]="uploading"
-                routerLink="/users/list">Cancel</button>
+                routerLink="/users/list">Annuler</button>
             </div>
           </div>
         </form>
