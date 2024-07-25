@@ -55,18 +55,18 @@ export class DashboardComponent implements OnInit {
     this.getApprovedRequest();
 
     this.contentHeader = {
-      headerTitle: "Home",
+      headerTitle: "Accueil",
       actionButton: true,
       breadcrumb: {
         type: "",
         links: [
           {
-            name: "Home",
+            name: "Accueil",
             isLink: true,
             link: "/",
           },
           {
-            name: "Dashboard",
+            name: "Tableau de bord",
             isLink: false,
           },
         ],

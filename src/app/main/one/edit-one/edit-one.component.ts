@@ -196,7 +196,7 @@ export class EditOneComponent implements OnInit {
                 }
                 setTimeout(() => {
                   Swal.close()
-                }, 3000);
+                }, 100);
               } else {
                 Swal.fire({
                   icon: 'error',
@@ -205,7 +205,7 @@ export class EditOneComponent implements OnInit {
                 })
                 setTimeout(() => {
                   Swal.close()
-                }, 3000);
+                }, 100);
               }
 
               this.selectedFiles = undefined;

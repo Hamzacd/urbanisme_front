@@ -251,11 +251,11 @@ export class AddOneComponent implements OnInit {
               this.message = event.body.msg
               if (event.body.result == "ok") {
                 this.uploading = false;
-                Swal.fire({
-                  icon: 'success',
-                  text: this.message,
-                  confirmButtonColor: "#6FAAE2",
-                })
+                // Swal.fire({
+                //   icon: 'success',
+                //   text: this.message,
+                //   confirmButtonColor: "#6FAAE2",
+                // })
                 if (name == 1) {
                   this.user.architect_file = data.filename;
                 }
@@ -268,18 +268,18 @@ export class AddOneComponent implements OnInit {
                 else if (name == 4) {
                   this.user.procuration_file = data.filename;
                 }
-                setTimeout(() => {
-                  Swal.close()
-                }, 500);
+                // setTimeout(() => {
+                //   Swal.close()
+                // }, 500);
               } else {
-                Swal.fire({
-                  icon: 'error',
-                  text: this.message,
-                  confirmButtonColor: "#6FAAE2",
-                })
-                setTimeout(() => {
-                  Swal.close()
-                }, 500);
+                // Swal.fire({
+                //   icon: 'error',
+                //   text: this.message,
+                //   confirmButtonColor: "#6FAAE2",
+                // })
+                // setTimeout(() => {
+                //   Swal.close()
+                // }, 500);
               }
 
               this.selectedFiles = undefined;

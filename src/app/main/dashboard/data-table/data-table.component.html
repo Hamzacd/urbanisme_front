@@ -1,21 +1,23 @@
 <section id="ngx-datatable-kitchen-sink">
     <div class="card">
-        <div class="header-left" style="padding: 22px 0px 0px 18px;">
+        <!-- <div class="header-left" style="padding: 22px 0px 0px 18px;">
             <h4 class="card-title">{{title}}</h4>
-          </div>
+          </div> -->
         <div class="row py-1">
             <div class="col-md-6 col-12">
                 <!-- <button (click)="go()" class="btn btn-danger ml-1" rippleEffect>
                     <span class="d-none d-sm-inline-block"> View
                         More</span><i data-feather="chevron-right" class="mr-0 mr-sm-1"></i>
                 </button> -->
-
+                <div class="header-left" style="padding: 22px 0px 0px 18px;">
+                    <h4 class="card-title">{{title}}</h4>
+                  </div>
                 <!-- <a csvLink [data]="exportCSVData" class="btn btn-outline-secondary float-right mr-1" rippleEffect
                     >Export CSV</a> -->
             </div>
             <div class="col-md-6 col-12 d-flex justify-content-md-end">
                 <div class="d-flex align-items-center justify-content-end pr-1 pb-1 pl-1 pl-md-0 pb-md-0">
-                    <label class="d-flex align-items-center">Search<input type="search" placeholder="Search"
+                    <label class="d-flex align-items-center">Recherche<input type="search" placeholder="Recherche"
                             class="form-control ml-25" (keyup)="filterUpdate($event)"
                             (search)="filterUpdate($event)" /></label>
                 </div>

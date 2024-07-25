@@ -71,18 +71,18 @@ export class SettingsComponent implements OnInit {
 
     // content header
     this.contentHeader = {
-      headerTitle: 'Setting',
+      headerTitle: 'Paramètre',
       actionButton: true,
       breadcrumb: {
         type: '',
         links: [
           {
-            name: 'Home',
+            name: 'Accueil',
             isLink: true,
             link: '/'
           },
           {
-            name: 'Edit Setting',
+            name: 'Modifier Paramètre',
             isLink: false,
             // link: '/settings'
           }

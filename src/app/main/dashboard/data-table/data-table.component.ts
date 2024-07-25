@@ -12,6 +12,7 @@ import {
   SelectionType,
 } from "@swimlane/ngx-datatable";
 import { One } from "app/main/models/one";
+import { DataService } from "app/services/data.service";
 
 @Component({
   selector: "app-data-table",
@@ -28,7 +29,7 @@ export class DataTableComponent implements OnChanges {
   public ColumnMode = ColumnMode;
   public SelectionType = SelectionType;
   private tempData: One[] = [];
-  constructor(private router: Router,) {}
+  constructor(private router: Router,private dataService: DataService) {}
   dataTable: any;
   // content_loaded = false;
   ngOnChanges(): void {
