@@ -104,7 +104,7 @@ export class SettingsComponent implements OnInit {
     },
       async (error: any) => {
         console.log(error)
-        this.dataService.toastrDanger("Error while taking - Check your info input, " + error);
+        this.dataService.toastrDanger("Erreur lors de la saisie - Vérifiez vos informations saisies, " + error);
       });
   }
 
@@ -308,7 +308,7 @@ export class SettingsComponent implements OnInit {
             if (err.error && err.error.message) {
               this.messageLogo = err.error.message;
             } else {
-              this.messageLogo = 'Could not upload the image!';
+              this.messageLogo = "Impossible de télécharger l'image!";
             }
             Swal.fire({
               icon: 'error',
@@ -383,7 +383,7 @@ export class SettingsComponent implements OnInit {
             if (err.error && err.error.message) {
               this.messageBg = err.error.message;
             } else {
-              this.messageBg = 'Could not upload the image!';
+              this.messageBg = "Impossible de télécharger l'image!";
             }
             Swal.fire({
               icon: 'error',

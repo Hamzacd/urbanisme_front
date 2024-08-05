@@ -123,7 +123,7 @@ export const menu: CoreMenu[] = [
     title: 'Permis d’habiter',
     translate: 'MENU.HABITER.COLLAPSIBLE',
     type: 'collapsible',
-    icon: 'table',
+    icon: 'archive',
     role: ['admin','manager'], 
     children: [
       {

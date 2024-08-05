@@ -27,6 +27,7 @@ export class AuthRegisterV2Component implements OnInit {
   public loading = false;
   public returnUrl: string;
   public error = '';  
+  public emailExist = ''; 
   public localConfig: any;
   public SETTING_IMAGE_PATH = environment.RESOURCES_LINK + '/' + environment.URL_SETTING_RSC + '/';
 
@@ -87,26 +88,42 @@ export class AuthRegisterV2Component implements OnInit {
    */
   onSubmit() {
     this.submitted = true;
-
+    this.emailExist = '';
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
     }
 
-    this.loading = true
+    this.loading = true;
     this._authenticationService
-      .register(this.f.username.value, this.f.email.value,this.f.cin.value, this.f.password.value)
+      .register(this.f.username.value, this.f.email.value, this.f.cin.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         data => {
-          this._router.navigate([this.returnUrl])
+          
+          console.log(data)
+          
+          this._router.navigate([this.returnUrl]);
         },
         error => {
-          this.error = error
-          this.loading = false
+
+          if (error.status === 422) {
+
+            const errors = error.error?.data;
+            if (errors?.email) {
+              this.emailExist = "L'e-mail existe déjà";
+            } else {
+              this.error = 'Registration error. Please try again.';
+            }
+          } else {
+            this.error = 'An unexpected error occurred. Please try again later.';
+          }
+
+          this.loading = false;
         }
-      )
+      );
   }
+
 
   // Lifecycle Hooks
   // -----------------------------------------------------------------------------------------------------

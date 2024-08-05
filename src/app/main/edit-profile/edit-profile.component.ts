@@ -346,7 +346,7 @@ export class EditProfileComponent implements OnInit {
             if (err.error && err.error.message) {
               this.message = err.error.message;
             } else {
-              this.message = 'Could not upload the image!';
+              this.message = "Impossible de télécharger l'image!";
             }
             Swal.fire({
               icon: 'error',

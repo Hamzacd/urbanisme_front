@@ -67,10 +67,8 @@ export class AuthenticationService {
             // Display welcome toast!
             setTimeout(() => {
               this._toastrService.success(
-                'You have successfully logged in as an ' +
-                user.role +
-                ' user to our App. Now you can start to explore. Enjoy! 🎉',
-                '👋 Welcome, ' + user.name + '!',
+                "Vous vous êtes connecté avec succès en tant qu'utilisateur à notre application. Vous pouvez maintenant commencer à explorer. Apprécier!🎉" ,
+                '👋 Bienvenue, ' + user.name + '!',
                 { toastClass: 'toast ngx-toastr', closeButton: true }
               );
             }, 2500);
@@ -110,9 +108,9 @@ export class AuthenticationService {
             // Display Success Register message!
             setTimeout(() => {
               this._toastrService.success(
-                'User register successfully. Enjoy! 🎉' +
-                'Please Login withyour credentials',
-                '👋 Welcome, ' + user.name + '!',
+                "L'utilisateur s'est enregistré avec succès. Amusez-vous bien ! 🎉" +
+                'Veuillez vous connecter avec vos identifiants',
+                '👋 Bienvenue, ' + user.name + '!',
                 { toastClass: 'toast ngx-toastr', closeButton: true }
               );
             }, 2500);

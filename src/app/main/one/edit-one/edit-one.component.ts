@@ -93,7 +93,7 @@ export class EditOneComponent implements OnInit {
       },
         async (error: any) => {
           console.log(error)
-          this.dataService.toastrDanger("Error while editting request, " + error);
+          this.dataService.toastrDanger("Erreur lors de l'édition de la demande, " + error);
         });
     
   }
@@ -219,7 +219,7 @@ export class EditOneComponent implements OnInit {
             if (err.error && err.error.message) {
               this.message = err.error.message;
             } else {
-              this.message = 'Could not upload the image!';
+              this.message = "Impossible de télécharger l'image !";
             }
             Swal.fire({
               icon: 'error',

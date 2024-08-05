@@ -113,7 +113,7 @@ export class OneComponent implements OnInit {
       },
         async (error: any) => {
           console.log(error)
-          this.dataService.toastrDanger("Error while taking - Check your info input, " + error);
+          this.dataService.toastrDanger("Erreur lors de la saisie - Vérifiez vos informations saisies, " + error);
         });
   }
 
@@ -142,13 +142,13 @@ export class OneComponent implements OnInit {
 
           this.table.offset = 0;
 
-          this.dataService.toastrSuccess("Status has been updated");
+          this.dataService.toastrSuccess("Le statut a été mis à jour");
 
           // console.log("users : ",this.users)
         }
       }, async (error: any) => {
         console.log(error)
-        this.dataService.toastrDanger("Error while taking - Check your info input, " + error);
+        this.dataService.toastrDanger("Erreur lors de la saisie - Vérifiez vos informations saisies, " + error);
       });
   }
   aproveRequest(id) {
@@ -198,7 +198,7 @@ export class OneComponent implements OnInit {
           }
         }, async (error: any) => {
           console.log(error)
-          that.dataService.toastrDanger("Error while deleting use, " + error);
+          that.dataService.toastrDanger("Erreur lors de l'annulation de la demande, " + error);
         });
 
       }

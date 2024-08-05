@@ -75,7 +75,9 @@
               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf="f.email.errors.required">L'e-mail est requis</div>
                 <div *ngIf="f.email.errors.email">L'e-mail doit être une adresse e-mail valide</div>
+                
               </div>
+              <div class="text-danger" *ngIf="emailExist">{{ emailExist }}</div>
             </div>
   
             <div class="form-group">

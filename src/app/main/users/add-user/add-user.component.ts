@@ -72,7 +72,7 @@ export class AddUserComponent implements OnInit {
     if (this.user_form.valid) {
       this.AddUserSup = this.dataService.post('users', this.user).subscribe(async (res: any) => {
         if (res.success) {
-          this.dataService.toastrSuccess("User has been created");
+          this.dataService.toastrSuccess("L'utilisateur a été créé");
           this.content_loaded = false;
           setTimeout(async () => {
             // Redirect to list
@@ -82,7 +82,7 @@ export class AddUserComponent implements OnInit {
       },
       async (error: any) => {
         console.log(error)
-        this.dataService.toastrDanger("Error while deleting User, " + error);
+        this.dataService.toastrDanger("Erreur lors de , " + error);
       });
     }
   }
@@ -222,7 +222,7 @@ export class AddUserComponent implements OnInit {
             if (err.error && err.error.message) {
               this.message = err.error.message;
             } else {
-              this.message = 'Could not upload the image!';
+              this.message = "Impossible de télécharger l'image !";
             }
             Swal.fire({
               icon: 'error',
